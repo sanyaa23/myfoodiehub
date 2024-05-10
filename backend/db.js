@@ -34,9 +34,10 @@
 // };
 
 // module.exports = mongoDB;
+require('dotenv').config();
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
-
+const mongoURI = process.env.MONGO_URI;
 const foodiehubItemSchema = new Schema({
     categoryName: String,
     name: String,
@@ -53,7 +54,6 @@ const foodiehubCategorySchema = new Schema({
 
 const FoodiehubItem = mongoose.model('FoodiehubItem', foodiehubItemSchema);
 const FoodCategories = mongoose.model('FoodCategories', foodiehubCategorySchema);
-const mongoURI = 'mongodb+srv://foodiehub:123@cluster0.vffpzlx.mongodb.net/foodiehubmern?retryWrites=true&w=majority&appName=Cluster0';
 
 const mongoDB = async () => {
     try {
