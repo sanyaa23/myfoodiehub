@@ -29,14 +29,22 @@ FoodieHub is an innovative MERN (MongoDB, Express.js, React.js, Node.js) food de
    git clone https://github.com/your-username/FoodieHub.git
    
 2.Install dependencies:
-cd FoodieHub
-npm install
+
+   ```bash
+   cd FoodieHub
+   npm install
 
 3.Set up environment variables:Create a .env file in the root directory and add the following variables:
-PORT=3000
-MONGODB_URI=your-mongodb-uri
+
+   ```bash
+   PORT=3000
+   MONGODB_URI=your-mongodb-uri
+
 Replace your-mongodb-uri with your MongoDB connection string.
 
 4.Run the server:
-npm start
+
+   ```bash
+   npm start
+
 Access the application in your web browser at http://localhost:3000.
