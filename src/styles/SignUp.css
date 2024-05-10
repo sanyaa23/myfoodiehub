@@ -1,0 +1,38 @@
+.signup-container {
+    background-color: #eee;
+    overflow: hidden;
+}
+
+.signup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signup-form {
+    width: 100%;
+    max-width: 400px;
+    /* Adjust the maximum width as needed */
+    padding: 20px;
+}
+
+.signup-image {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 400px;
+    /* Adjust the maximum width as needed */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .signup-content {
+        flex-direction: column-reverse;
+        /* Reverse the order for mobile devices */
+    }
+
+    .signup-form,
+    .signup-image {
+        max-width: none;
+        /* Remove the maximum width for better responsiveness */
+    }
+}

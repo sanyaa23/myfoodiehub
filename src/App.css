@@ -1,11 +1,7 @@
-.App {
+/* .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -35,4 +31,19 @@
   to {
     transform: rotate(360deg);
   }
+} */
+/* .carousel{
+height: 50vh;
+} */
+/* .footer_pg {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+} */
+.carousel{
+max-height: 670px;
+}
+.carousel-img{
+max-height: 670px;
 }
