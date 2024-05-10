@@ -34,7 +34,7 @@
 // };
 
 // module.exports = mongoDB;
-require('dotenv').config();
+require('dotenv').config({path: '../.env'});
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 const mongoURI = process.env.MONGO_URI;
