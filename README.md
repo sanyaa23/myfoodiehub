@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# FoodieHub
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+FoodieHub is an innovative MERN (MongoDB, Express.js, React.js, Node.js) food delivery platform, showcasing an extensive array of mouthwatering culinary delights. Discover a diverse selection of delectable food items curated to tantalize your taste buds and elevate your dining experience. With a seamless user interface and robust backend infrastructure, FoodieHub delivers convenience and satisfaction with every order. Indulge in a gastronomic journey like never before, right from the comfort of your own home.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+1. **User Authentication**: Users can sign up and log in to the website using their email.
+2. **Search Functionality**: Users can search through the menu using keywords from each food category and food item.
+3. **Shopping Cart**: Users can add food items to the cart and proceed to checkout.
+4. **Order History**: Users can view past orders in the "My Orders" section.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tools & Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- HTML
+- CSS
+- JavaScript
+- React.js
+- Bootstrap 5
+- Express.js
+- Node.js
+- MongoDB
 
-### `npm test`
+## Setup Instructions
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository:
 
-### `npm run build`
+   ```bash
+   git clone https://github.com/your-username/FoodieHub.git
+   ```
+   
+2. Install dependencies:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```bash
+   cd FoodieHub
+   npm install
+   ```
+3. Set up environment variables: 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   Create a .env file in the root directory and add the following variables:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   PORT=3000
+   MONGODB_URI=your-mongodb-uri
+   ```
 
-### `npm run eject`
+   Replace your-mongodb-uri with your MongoDB connection string.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. Run the server:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```bash
+   npm start
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   Access the application in your web browser at http://localhost:3000.
