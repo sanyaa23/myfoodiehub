@@ -54,11 +54,14 @@ import { Link, useNavigate } from 'react-router-dom';
 import Badge from 'react-bootstrap/Badge';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import Cart from '../screens/Cart';
 import Container from 'react-bootstrap/Container';
 import Modal from '../Modal';
+import { useCart } from './ContextReducer';
 export default function CustomNavbar() {
     const navigate = useNavigate();
-    const [cartView,setCartView]=useState(false);
+    const data = useCart();
+    const [cartView, setCartView] = useState(false);
     const handleLogout = () => {
         localStorage.removeItem('authToken');
         navigate('/login')
@@ -74,7 +77,7 @@ export default function CustomNavbar() {
                         {
                             localStorage.getItem('authToken') ?
                                 <Nav >
-                                    <Nav.Link as={Link} to="/">My Orders</Nav.Link>
+                                    <Nav.Link as={Link} to="/myorder">My Orders</Nav.Link>
                                 </Nav> : ""
                         }
                     </Nav>
@@ -85,15 +88,15 @@ export default function CustomNavbar() {
                                 <Nav.Link as={Link} to="/login" className='btn btn-light'>Login</Nav.Link>
                             </Nav> :
                             <Nav>
-                                <Nav.Link as={Link} to="/" onClick={()=>{
-                                    {setCartView(true)}
+                                <Nav.Link as={Link} to="/" onClick={() => {
+                                    { setCartView(true) }
                                 }}>My Cart {" "}
                                     <Badge pill bg="danger" className='m-1'>
-                                        2
+                                        {data.length}
                                     </Badge></Nav.Link>
 
                                 <Nav>
-                                {cartView?<Modal></Modal>:null}
+                                    {cartView ? <Modal onClose={() => { setCartView(false) }}><Cart /></Modal> : null}
                                     <Nav.Link as={Link} to="/login" className='btn btn-light' onClick={handleLogout}>Logout</Nav.Link>
                                 </Nav>
                             </Nav>

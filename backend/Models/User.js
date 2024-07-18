@@ -27,7 +27,7 @@ const foodiehubItemSchema = new Schema({
     date:
     {
         type: String,
-        default: Date.now
+        default: Date.now()
     }
 });
 module.exports = mongoose.model('user', foodiehubItemSchema);

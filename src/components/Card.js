@@ -9,30 +9,34 @@ export default function Card(props) {
     const [Qty, setQty] = useState(1)
     const [Size, setSize] = useState("")
     const handleAddToCart = async () => {
-        // let food = []
-        // for (const item of data) {
-        //     if (item.id === props.foodItem._id) {
-        //         food = item;
+        let food = []
+        for (const item of data) {
+            if (item.id === props.foodItem._id) {
+                food = item;
 
-        //         break;
-        //     }
-        // }
-        // console.log(food)
-        // console.log(new Date())
-        // if (food.length !== 0) {
-        //     if (food.size === size) {
-        //         await dispatch({ type: "UPDATE", id: props.foodItem._id, price: finalPrice, qty: qty })
-        //         return
-        //     }
-        //     else if (food.size !== size) {
-        //         await dispatch({ type: "ADD", id: props.foodItem._id, name: props.foodItem.name, price: finalPrice, qty: qty, size: size, img: props.ImgSrc })
-        //         console.log("Size different so simply ADD one more to the list")
-        //         return
-        //     }
-        //     return
-        // }
-        await dispatch({ type: "ADD", id: props.foodItem._id, name: props.foodItem.name, price: finalPrice, Qty: Qty, Size: Size })
-        console.log(data);
+                break;
+            }
+        }
+        console.log(food)
+        console.log(new Date())
+
+        if (food.length !== 0) {
+            if (food.Size === Size) {
+                await dispatch({ type: "UPDATE", id: props.foodItem._id, price: finalPrice, Qty: Qty })
+                return
+            }
+            else if (food.Size !== Size && data.length <= 7) {
+                await dispatch({ type: "ADD", id: props.foodItem._id, name: props.foodItem.name, price: finalPrice, Qty: Qty, Size: Size, img: props.ImgSrc })
+                console.log("Size different so simply ADD one more to the list")
+                return
+            }
+            return
+        }
+        if (data.length <= 7) {
+            await dispatch({ type: "ADD", id: props.foodItem._id, name: props.foodItem.name, price: finalPrice, Qty: Qty, Size: Size })
+        }
+
+        // setBtnEnable(true)
 
     }
     let finalPrice = Qty * parseInt(options[Size]);

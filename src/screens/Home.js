@@ -47,10 +47,10 @@ export default function Home() {
                 </div>
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img src="https://source.unsplash.com/random/1350x900/?burger" className="d-block w-100 carousel-img" alt="..." />
+                        <img src="https://picsum.photos/id/312/1350/950" className="d-block w-100 carousel-img" alt="..." />
                     </div>
                     <div className="carousel-item">
-                        <img src="https://source.unsplash.com/random/1350x900/?pizza" className="d-block w-100 carousel-img" alt="..." />
+                        <img src="https://picsum.photos/id/312/1350/950" className="d-block w-100 carousel-img" alt="..." />
                         {/* <div className="carousel-caption d-none d-md-block">
                             <form class="d-flex">
                                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
@@ -59,7 +59,7 @@ export default function Home() {
                         </div> */}
                     </div>
                     <div className="carousel-item">
-                        <img src="https://source.unsplash.com/random/1350x900/?noodles" className="d-block w-100 carousel-img" alt="..." />
+                        <img src="https://picsum.photos/id/312/1350/950" className="d-block w-100 carousel-img" alt="..." />
                         {/* <div className="carousel-caption d-none d-md-block">
                             <form class="d-flex">
                                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />

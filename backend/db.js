@@ -63,8 +63,8 @@ const mongoDB = async () => {
         const catData = await FoodCategories.find({});
         global.foodiehubitems = data;
         global.foodcategories = catData;
-        console.log(global.foodiehubitems);
-        console.log(global.foodcategories);
+        // console.log(global.foodiehubitems);
+        // console.log(global.foodcategories);
     } catch (error) {
         console.error("Error connecting to MongoDB:", error);
     }

@@ -8,29 +8,28 @@ export default function Cart() {
     if (data.length === 0) {
         return (
             <div>
-                <div className='m-5 w-100 text-center fs-3'>The Cart is Empty!</div>
+                <div className='m-5 w-100 text-center fs-3' style={{ color: "white" }}>The Cart is Empty!</div>
             </div>
         )
     }
-
-    // const handleCheckOut = async () => {
-    //     let userEmail = localStorage.getItem("userEmail")
-    //     let response = await fetch("http://localhost:5000/api/orderData",{
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body:JSON.stringify({
-    //             order_data: data,
-    //             email: userEmail,
-    //             order_date: new Date().toDateString()
-    //         })
-    //     })
-    //     console.log("Order Response: ",response);
-    //     if(response.status === 200) {
-    //         dispatch({type:"DROP"})
-    //     }
-    // }
+    const handleCheckOut = async () => {
+        let userEmail = localStorage.getItem("userEmail")
+        let response = await fetch("http://localhost:5000/api/orderData", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                order_data: data,
+                email: userEmail,
+                order_date: new Date().toDateString()
+            })
+        })
+        console.log("Order Response: ", response);
+        if (response.status === 200) {
+            dispatch({ type: "DROP" })
+        }
+    }
 
     let totalPrice = data.reduce((total, food) => total + food.price, 0)
     return (
@@ -53,17 +52,21 @@ export default function Cart() {
                             <tr>
                                 <th scope='row'>{index + 1}</th>
                                 <td>{food.name}</td>
-                                <td>{food.qty}</td>
-                                <td>{food.size}</td>
+                                <td>{food.Qty}</td>
+                                <td>{food.Size}</td>
                                 <td>{food.price}</td>
                                 <td><button type='button' className='btn p-0'><img src={trash} alt="delete" onClick={() => { dispatch({ type: "REMOVE", index: index }) }} /></button></td>
                             </tr>
                         ))}
                     </tbody>
                 </table>
-                <div><h1 className='fs-2'>Total Price: {totalPrice}/-</h1></div>
+                <div><h1 className='fs-2' style={{ color: 'white' }}>Total Price: {totalPrice}/-</h1></div>
             </div>
-            <button className='btn bg-success mt-5' onClick={handleCheckOut}> Check Out </button>
+            <div style={{ display: 'flex' }}>
+                <button className='btn bg-success mt-5' style={{ marginLeft: "2rem", height: "2.5em", width: "8.5em" }} onClick={handleCheckOut}> Check Out </button>
+                {/* <div className='w-100 text-center fs-3' style={{ marginLeft: "-15rem", marginTop: "2.5rem", color: "white" }}>{data.length === 8}?The Cart is Full :""</div> */}
+            </div>
+
         </div>
     )
 }
